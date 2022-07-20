@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <form name="form1" method="POST" action="">
+        <table>
+            <tr>
+                <td>Nombre de usuario: (*)</td>
+                <td><input type="text" name="usuario" id="usuario" value=""></td>
+            </tr>
+            <tr>
+                <td>Escribe tu nombre: (*)</td>
+                <td><input type="text" name="nombre" id="nombre" value=""></td>
+            </tr>
+            <tr>
+                <td>Escribe tus apellidos: (*)</td>
+                <td><input type="text" name="apellido" id="apellido" value=""></td>
+            </tr>
+            <tr>
+                <td>Escribe tu correo electrónico:</td>
+                <td><input type="text" name="email" id="email" value=""></td>
+            </tr>
+            <tr>
+                <td>Escribe una contraseña: (*)</td>
+                <td><input type="password" name="clave1" id="clave1" value=""></td>
+            </tr>
+            <tr>
+                <td>Repite la contraseña: (*)</td>
+                <td><input type="password" name="clave2" id="clave2" value=""></td> 
+            </tr>
+
+            <tr>
+                <td>Selecciona tus hobbies: (*)</td>
+                <td>
+                <input type="checkbox" name="hobby" value="programar">Programar<br>
+                <input type="checkbox" name="hobby" value="deportes">Deportes<br>
+                <input type="checkbox" name="hobby" value="piedras">Tirar Piedras<br>
+                <input type="checkbox" name="hobby" value="cine">Cine<br>
+                <input type="checkbox" name="hobby" value="leer">Leer<br>
+                <input type="checkbox" name="hobby" value="videojuegos">Video Juegos<br>
+                </td>
+            </tr>
+            <tr>
+                <td>Pais: (*)</td>
+                <td>
+                <select name="pais" id="pais">
+                    <option value="">--</option>
+                    <option value="españa">España</option>
+                    <option value="francia">Francia</option>
+                    <option value="finlandia">Finlandia</option>
+                    <option value="inglaterra">Inglaterra</option>
+                    <option value="portugal">Portugal</option>
+                    <option value="andorra">Andorra</option>
+                </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Sexo:</td>
+                <td>
+                <input type="radio" name="sexo" value="masculino">Masculino <br>
+                <input type="radio" name="sexo" value="femenino">Femenino <br>
+                <input type="radio" name="sexo" value="ns/nc">NS/NC <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" name="boton" onClick="Subir()">Crear usuario</button>
+                </td>
+                <td>
+                    <button type="reset" name="botonR">Reset</button>
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+        Los campos con asteriscos(*) son obligatorios.
+
+    </form>
+
+<script>
+    function Subir() {
+        let formulario="";
+        let usuario=document.form1.usuario.value;
+        let nombre=document.form1.nombre.value;
+        let apellido=document.form1.apellido.value;
+        let email=document.form1.email.value;
+        let clave1=document.form1.clave1.value;
+        let clave2=document.form1.clave2.value;
+        let hobbies="";
+        let b=document.form1.hobby.length;
+        
+        for(a=0;a<b;a++) {
+            if (document.form1.hobby[a].checked)
+            hobbies+=document.form1.hobby[a].value + ", ";
+        }
+        
+        let pais=document.form1.pais.value;
+        let sexo=document.form1.sexo.value;
+        
+        if (usuario=="" || nombre=="" || apellido=="" || pais=="" ) {
+            alert("Los campos con asterisco son obligatorios");
+            return false;
+        }
+        if (hobbies.length==0) {
+            alert("Debes seleccionar al menos un hobby");
+            return false;
+        }
+        if ((clave1!=clave2) || (clave1=="")) {
+            alert("Las claves deben ser iguales y no pueden estar en blanco");
+            return false;
+        }
+        if (email=="") email="No informado";
+        if (sexo=="") sexo="No informado";
+        formulario="Usuario: " + usuario + "\nNombre: " + nombre + "\nApellido: " + apellido + "\n"
+            + "E-mail: " + email + "\nClave: " + clave1  + "\nHobbies: " + hobbies + "\nPais: "
+            + pais + "\nSexo: " + sexo;
+        alert(formulario);	
+    }
+
+
+</script>
+
+
+</body>
+</html>

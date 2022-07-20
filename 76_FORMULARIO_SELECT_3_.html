@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <p>Como se dice rojo en inglés:</p>
+        <p><select id="pregunta1">
+            <option value="1">blue</option>
+            <option value="2">green</option>
+            <option value="3">red</option>
+        </select></p>
+        <p> Como se dice ventana en inglés:</p>
+        <p><select id="pregunta2">
+            <option value="1">window</option>
+            <option value="2">door</option>
+            <option value="3">bedroom</option>
+        </select></p>
+        <p> Como se dice gato en inglés:</p>
+        <p><select id="pregunta3">
+            <option value="1">dog</option>
+            <option value="2">cat</option>
+            <option value="3">lion</option>
+        </select></p>
+        <p> Como se dice hombre en inglés:</p>
+        <p><select id="pregunta4">
+            <option value="1">women</option>
+            <option value="2">man</option>
+            <option value="3">child</option>
+        </select></p>
+        <p><input type="button" value="Ver Respuestas" onClick="verificar()"></p>
+    </form>
+
+    <script>
+        function verificar() {
+            let correctas = 0;
+            let pregunta1 = document.getElementById('pregunta1');
+            let pregunta2 = document.getElementById('pregunta2');
+            let pregunta3 = document.getElementById('pregunta3');
+            let progunta4 = document.getElementById('pregunta4');
+            if (pregunta1.options[pregunta1.selectedIndex].value == 3) {
+                correctas++;
+            }
+            if (pregunta2.options[pregunta2.selectedIndex].value == 1) {
+                correctas++;
+            }
+            if (pregunta3.options[pregunta3.selectedIndex].value == 2) {
+                correctas++;
+            }
+            if (pregunta4.options[pregunta4.selectedIndex].value == 2) {
+                correctas++;
+            }
+            alert('Cantidad de respuestas correctas:' + correctas);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function contarSeleccionados() {
+            let cant=0;
+            if (document.form1.lenguaje1.checked)
+            cant++;
+            if (document.form1.lenguaje2.checked)
+            cant++;
+            if (document.form1.lenguaje3.checked)
+            cant++;
+            if (document.form1.lenguaje4.checked)
+            cant++;
+            alert('El usuario conoce ' + cant + ' lenguajes');
+        }
+    </script>
+    <form name="form1">
+    <input type="checkbox" name="lenguaje1">JavaScript
+    <br>
+    <input type="checkbox" name="lenguaje2">PHP
+    <br>
+    <input type="checkbox" name="lenguaje3">JSP
+    <br>
+    <input type="checkbox" name="lenguaje4">VB.Net
+    <br>
+    <input type="button" value="Mostrar" onClick="contarSeleccionados()">
+    </form>
+
+</body>
+</html>

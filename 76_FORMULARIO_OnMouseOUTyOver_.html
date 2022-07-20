@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        tr, td, a {
+            border: 1px solid;
+        }
+    </style>
+    <title>Ejercicio 2B Formularios</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td onMouseOver="pintar(this,'#ff0000')" onMouseOut="pintar(this,'#ffffff')">
+                <a href="https://www.epicgames.com/fortnite/es-ES/home">FORTNITE</a>
+            </td>
+            <td onMouseOver="pintar(this,'#00ff00')" onMouseOut="pintar(this,'#ffffff')">
+                <a href="https://www.rocketleague.com/es-es/">ROCKET LEAGUE</a>
+            </td>
+            <td onMouseOver="pintar(this,'#0000ff')" onMouseOut="pintar(this,'#ffffff')">
+                <a href="https://www.ea.com/es-es/games/battlefield/battlefield-2042">BATTLEFIELD</a>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function pintar(objeto, col) {
+            objeto.style.backgroundColor = col;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6 Formularios <SELECT></SELECT></title>
+</head>
+<body>
+    
+    <form>
+        <p>Pizzeria Fran Da Vinci</p>
+        <p>Elige una:<select id="pizza" onChange="seleccionaPizza()"> 
+                <option value=""></option>
+                <option value="18 Euros">Creampop con Nata</option>
+                <option value="15 Euros">Kebab con Gambas</option>
+                <option value="17 Euros">Salmón y Aceitunas Negras</option>
+            </select></p>
+        <p><input type="text" id="mensaje"></p>
+    </form>
+
+    <script>
+        function seleccionaPizza() {
+            document.getElementById('mensaje').value =
+                document.getElementById('pizza').options[document.getElementById('pizza').selectedIndex].value;
+        }
+   
+    </script>
+
+</body>
+</html>

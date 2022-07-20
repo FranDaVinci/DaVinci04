@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6B de Formulario</title>
+</head>
+<body>
+    
+    <script>
+        function Persona(nombre, edad) {
+            this.nombre = nombre;
+            this.edad = edad;
+            this.imprimirNombre = function() {
+                document.write(this.nombre + ' es la persona de mayor edad porque tiene ' + this.edad + ' años ' + '<br>');
+            }
+        }
+
+        let person = new Array(4);
+        person[0] = new Persona('Enrique', 84);
+        person[1] = new Persona('Fran', 37);
+        person[2] = new Persona('Maria', 63);
+        person[3] = new Persona('Carolina', 53);
+        let mayor = 0;
+        for (let f = 1; f < person.length; f++) {
+            if (person[f].edad > person[mayor].edad) {
+                mayor = f;
+            }
+        }
+        document.write('Personas de mayor edad:<br>');
+        for (let f = 0; f < person.length; f++) {
+            if (person[f].edad == person[mayor].edad) {
+                person[f].imprimirNombre();
+            }
+        }
+    </script>
+</body>
+</html>

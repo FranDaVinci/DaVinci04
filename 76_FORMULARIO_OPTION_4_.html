@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8 de Formulario</title>
+</head>
+<body>
+    <form>
+        <p><h1>Pizzeria Fran Da Vinci</h1></p>
+        <p> Número de Pizzas </p>
+        <p>
+            <select id="pizza">
+                <option value="40">1</option>
+                <option value="60">3</option>
+                <option value="80">5</option>
+            </select>
+        </p>
+        <p> Primer Ingrediente </p>
+        <p>
+            <select id="ingrediente">
+                <option value="4">Queso</option>
+                <option value="6">Jamón y Queso</option>
+                <option value="10">Especial</option>
+            </select>
+        </p>
+        <p> Segundo Ingrediente </p>
+        <p>
+            <select id="ingrediente2">
+                <option value="12">Atún</option>
+                <option value="14">Gambas</option>
+                <option value="9">Carne de Kebab</option>
+            </select>
+        </p>
+        <p><input type="button" value="Calcular Precio" onClick="calcularPresupuesto()"></p>
+        <p><input type="text" id="resultado"></p>
+    </form>
+
+    <script>
+        function calcularPresupuesto() {
+            let pizza = document.getElementById('pizza')
+            let precio1 = pizza.options[pizza.selectedIndex].value;
+            let ingrediente = document.getElementById('ingrediente')
+            let precio2 = ingrediente.options[ingrediente.selectedIndex].value;
+            let disco1 = document.getElementById('ingrediente2')
+            let precio3 = ingrediente2.options[ingrediente2.selectedIndex].value;
+            precio1 = parseInt(precio1);
+            precio2 = parseInt(precio2);
+            precio3 = parseInt(precio3);
+            let suma = precio1 + precio2 + precio3;
+            document.getElementById('resultado').value = suma;
+        }
+    </script>
+    
+</body>
+</html>

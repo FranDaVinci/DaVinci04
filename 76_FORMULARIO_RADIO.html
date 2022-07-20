@@ -1,0 +1,39 @@
+<!--
+    Confeccionar una página que muestre dos objetos de la clase RADIO solicitando que seleccione si es mayor de 18 años o no. Al presionar un botón mostrar un alert indicando si puede ingresar al sitio o no.
+
+    Problema 1.
+    -->
+    
+    <!DOCTYPE html>
+    
+    <html>
+    
+    <head>
+        <title>Ejercicio 11 de Formulario Radio</title>
+        <meta charset="UTF-8">
+    </head>
+    
+    <body>
+    
+        <form>
+            <p>¿Es mayor de edad?</p>
+            <p><input type="radio" id="radio1" name="edad">si</p>
+            <p><input type="radio" id="radio2" name="edad">no</p>
+            <p><input type="button" value="Verificar" onClick="verificar()"></p>
+        </form>
+    
+        <script>
+            function verificar() {
+                if (document.getElementById('radio1').checked) {
+                    alert('Eres mayor de edad y por lo tanto puedes entrar');
+                }
+                if (document.getElementById('radio2').checked) {
+                    alert('No eres mayor de edad y por lo tanto no puedes entrar');
+                }
+            }
+        </script>
+    
+    </body>
+    
+    </html>
+    

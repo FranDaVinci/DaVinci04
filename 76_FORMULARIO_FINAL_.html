@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="" name="form1">
+        <p>Campo de Texto</p>
+        <input type="text" name="texto7" id="texto1">
+        <br>
+        <p>Text Area</p>
+        <textarea name="textarea1" id="texto2" cols="30" rows="10"></textarea>
+        <p id="texto3">Botones Tipo Radio</p>
+        SI<input type="radio" name="radios" value="SI" id="">
+        NO<input type="radio" name="radios" value="NO" id="">
+        NS/NC<input type="radio" name="radios" value="NS/NC" id="">
+        
+        <p>Casillas Tipo Checkbox</p>
+        He leído y acepto las condiciones<input type="checkbox" name="check" id="" value="">
+        He leído la política de privacidad<input type="checkbox" name="check" id="" value="">
+        <p>Desplegable Select</p>
+        <select name="" id="texto5">
+            <option value="">-------</option>
+            <option value="1">Primer Valor</option>
+            <option value="3">Segundo Valor</option>
+            <option value="2">Tercer Valor</option>
+        </select>
+        <br><br>
+        <input type="button" name="" value="Pruébame" onclick="probar()">
+        <input type="button" name="" value="Enviar" onclick="movertexto()">
+        <br><br><br><br><br><br><br>
+        <p>Los valores se remitiran a estos campos:</p>
+        <textarea name="textarea2" id="texto5" cols="30" rows="10" value=""></textarea>
+        <p>Texto enviado:</p>
+        <input type="text" name="texto6" value="">
+        
+    </form>
+
+    <script>
+
+        function probar() {
+            if (document.getElementById("texto1").value == "") {                
+                alert("Por favor rellene el campo de texto.")
+            }
+            if (document.getElementById("texto2").value == "") {
+                alert("Por favor rellene el Text Area.")              
+            }
+            if (document.form1.radios.value == "") {
+                alert("Ningun botón Radio ha sido elegido.")            
+            }
+            if ((document.form1.check[0].checked == false) || (document.form1.check[1].checked == false)) {
+                alert("Ningun Checkbox ha sido seleccionado.")            
+            }
+            if (document.getElementById("texto5").value == "") {
+                alert("No has elegido ningún SELECT")              
+            }           
+        }
+
+        function movertexto() {
+            document.form1.textarea2.value = document.form1.textarea1.value;
+            document.form1.texto6.value = document.form1.texto7.value;
+        }
+
+    </script>
+</body>
+</html>

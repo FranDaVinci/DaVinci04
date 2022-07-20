@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7B Formulario</title>
+</head>
+<body>
+    
+    <div style="width:400px;height:400px;background:#ff0000" id="recuadro1">
+    </div>
+    <div style="display:inline;width:400px;height:400px;background:#0000ff" id="recuadro2">
+    </div>
+
+    <script>
+        document.getElementById('recuadro1').addEventListener('mousedown', cuadro1);
+        document.getElementById('recuadro1').addEventListener('mouseup', cuadro2);
+
+        function cuadro1() {
+            document.getElementById('recuadro1').style.backgroundColor = '#ffff00';
+        }
+
+        function cuadro2() {
+            document.getElementById('recuadro1').style.backgroundColor = '#ff0000';
+        }
+
+
+        document.getElementById('recuadro2').addEventListener('mousedown', cuadro3);
+        document.getElementById('recuadro2').addEventListener('mouseup', cuadro4);
+
+        function cuadro3() {
+            document.getElementById('recuadro2').style.backgroundColor = '#ff00ff';
+        }
+
+        function cuadro4() {
+            document.getElementById('recuadro2').style.backgroundColor = '#0000ff';
+        }
+
+    </script>
+
+
+</body>
+</html>

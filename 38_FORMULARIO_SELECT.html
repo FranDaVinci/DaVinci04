@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function cambiarColor() {
+            document.form1.text1.value = document.form1.select1.selectedIndex;
+            //se obtiene el indice de la opcion elegida(que empieza en 0)
+
+            document.form1.text2.value =
+            document.form1.select1.options[document.form1.select1.selectedIndex].text;
+            //se obtiene el texto de la opcion elegida.
+
+            document.form1.text3.value =           
+            document.form1.select1.options [document.form1.select1.selectedIndex].value;
+            //se obtiene el valor de la opcion elegida.
+            }
+    </script>
+
+    <form name="form1">
+        <select size="1" name="select1" ONCHANGE="cambiarColor()">
+            <input type="button" value="Agregar Texto" >
+            <option value="0xff0000">Rojo</option>
+            <option value="0x00ff00">Verde</option>
+            <option value="0x0000ff">Azul</option>
+            </select></p>
+            <br>
+            Número de índice seleccionado del objeto SELECT:<input type="text"
+            name="text1"><br>
+            Texto seleccionado:<input type="text" name="text2"><br>
+            Valor asociado:<input type="text" name="text3"><br>
+    </form>
+
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="">
+
+        Escribe tu nombre:
+        <input type="text" id="nom">        
+        <input type="button" value="Enviar" onclick="mostrar()">
+    
+    </form>
+
+
+    <script>
+
+        function mostrar() {
+            let nombre = "";
+            nombre = document.getElementById("nom").value;
+
+            alert("El nombre que has introducido es " +nombre);
+        }
+
+    </script>
+    
+</body>
+</html>
